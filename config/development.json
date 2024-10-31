@@ -1,5 +1,0 @@
-﻿{
-  "dev": {
-    "proxyApi": "http://localhost:5000"
-  }
-}
