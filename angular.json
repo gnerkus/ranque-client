@@ -29,7 +29,8 @@
                 "glob": "**/*",
                 "input": "public"
               },
-              "src/_routes.json"
+              "src/_routes.json",
+              "src/docs.html"
             ],
             "styles": [
               "src/styles.css"
