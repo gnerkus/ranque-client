@@ -5,12 +5,14 @@
   TemplateRef,
   ViewContainerRef
 } from '@angular/core';
+import {StateService} from "./state/state.service";
 
 @Directive({ selector: '[appShowAuthed]' })
 export class ShowAuthedDirective implements OnInit {
   constructor(
     private templateRef: TemplateRef<any>,
-    private viewContainer: ViewContainerRef
+    private viewContainer: ViewContainerRef,
+    private readonly  stateService: StateService
   ) {}
 
   condition: boolean = false;
@@ -25,7 +27,8 @@ export class ShowAuthedDirective implements OnInit {
   }
 
   @Input() set appShowAuthed(condition: boolean) {
-    this.condition = condition;
+    const authUser = this.stateService.getLastUser();
+    this.condition = condition === !!authUser;
   }
 
 }
