@@ -1,3 +1,5 @@
 export const environment = {
-  production: true
+  production: true,
+  host: 'https://ranque-client.pages.dev/',
+  apiUrl: 'https://nanotome-bookmark-api.azurewebsites.net'
 };
