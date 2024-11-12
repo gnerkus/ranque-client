@@ -17,3 +17,11 @@
 h1, h2, h3 {
   font-family: 'MuseoModerno', Roboto, Helvetica, Arial, sans-serif;
 }
+
+[type='text'], [type='email'], [type='password'] {
+  appearance: none;
+  -moz-appearance: none;
+  background-color: white;
+  padding-right: 0.75rem;
+  padding-left: 0.75rem;
+}
