@@ -74,6 +74,7 @@ export class LoginComponent implements OnInit {
           }),
           map(result => result as string),
         );
+        this.error$.subscribe();
       }
     }
 
