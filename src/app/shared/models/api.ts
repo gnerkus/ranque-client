@@ -6,6 +6,6 @@
 export type UserResponse = AuthUser;
 
 export type LoginUserRequest = {
-  email: string;
+  username: string;
   password: string;
 }
