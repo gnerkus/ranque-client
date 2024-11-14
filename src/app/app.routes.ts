@@ -9,8 +9,8 @@ export const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'dashboard/home', component: DashboardComponent },
-  { path: '', redirectTo: 'dashboard/home', pathMatch: 'full' },
   { path: 'dashboard', redirectTo: 'dashboard/home', pathMatch: 'full' },
+  { path: '', redirectTo: 'dashboard/home', pathMatch: 'full' },
   { path: '**', component: NotFoundComponent },
 ];
 
