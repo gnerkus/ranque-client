@@ -4,7 +4,7 @@ import {StateService} from "../shared/state/state.service";
 import {Observable, map, tap} from "rxjs";
 import {AuthUser} from "../shared/models/user";
 import {environment} from "../../environments/environment";
-import {LoginUserRequest, UserResponse} from "../shared/models/api";
+import {LoginUserRequest, RegisterUserRequest, UserResponse} from "../shared/models/api";
 
 // make this service available from the root
 // providedIn: 'any' makes the service lazy-loaded
@@ -25,6 +25,13 @@ export class AuthenticationService {
     return this.http.post<UserResponse>(url, loginUser).pipe(
       map(response => response),
       tap(user => this.stateService.setUser(user)),
+    );
+  }
+
+  register(registerUser: RegisterUserRequest): Observable<AuthUser> {
+    const url = `${environment.apiUrl}/api/auth`;
+    return this.http.post<UserResponse>(url, registerUser).pipe(
+      map(response => response),
     );
   }
 }
