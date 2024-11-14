@@ -9,3 +9,8 @@ export type LoginUserRequest = {
   username: string;
   password: string;
 }
+
+export type RegisterUserRequest = {
+  username: string;
+  password: string;
+}
