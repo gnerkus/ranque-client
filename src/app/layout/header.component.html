@@ -1,0 +1,26 @@
+﻿<!-- Show this for logged in users -->
+<nav class="w-full h-20 p-4 shadow-md bg-white relative">
+  <div
+    class="h-full flex justify-between items-center mx-auto max-w-7xl xl:max-w-7xl md:max-w-2xl sm:max-w-xl">
+    <div class="flex items-center">
+      <img alt="logo" height="64" ngSrc="ranque_logo.svg" width="64">
+      <h1 class="text-5xl text-teal-600">Ranque</h1>
+    </div>
+    <p></p>
+    <div *appShowAuthed="true" class="flex gap-2">
+      <img
+        ngSrc="(currentUser | async)?.image || 'https://static.productionready.io/images/smiley-cyrus.jpg'"
+        *ngIf="(currentUser | async)?.image" class="user-pic" alt="user image" width="64"
+        height="64" />
+      <p>{{ (currentUser | async)?.username || "User" }}</p>
+    </div>
+    <div *appShowAuthed="false">
+      <button
+        class="bg-teal-600 hover:bg-teal-700 text-white justify-center rounded-md shadow-md px-3 py-2 focus-visible:outline transition ease-in-out">
+        <a href="/dashboard">
+          Get started
+        </a>
+      </button>
+    </div>
+  </div>
+</nav>

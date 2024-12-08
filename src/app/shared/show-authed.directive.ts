@@ -27,7 +27,7 @@ export class ShowAuthedDirective implements OnInit {
   }
 
   @Input() set appShowAuthed(condition: boolean) {
-    const authUser = this.stateService.getLastUser();
+    const authUser = this.stateService.user$;
     this.condition = condition === !!authUser;
   }
 

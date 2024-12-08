@@ -1,24 +1,3 @@
-<nav class="navbar navbar-light">
-  <div class="container">
-    <!-- Show this for logged in users -->
-    <div *appShowAuthed="true">
-      <a class="navbar-brand" routerLink="/dashboard/home">Ranque</a>
-      <ul
-          class="nav navbar-nav pull-xs-right">
-
-        <li class="nav-item">
-          <a class="nav-link"
-             routerLink="/dashboard/home/profile"
-             routerLinkActive="active">
-            <img
-              ngSrc="currentUser.image || 'https://static.productionready.io/images/smiley-cyrus.jpg'"
-              *ngIf="currentUser.image" class="user-pic" alt="user image" width="64" height="64" />
-            {{ currentUser.username }}
-          </a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
+<app-header></app-header>
 
 <router-outlet />

@@ -1,12 +1,13 @@
 import {Component, OnInit} from '@angular/core';
-import {RouterLink, RouterLinkActive, RouterOutlet} from '@angular/router';
-import {CommonModule, NgOptimizedImage} from "@angular/common";
+import {RouterOutlet} from '@angular/router';
+import {CommonModule} from "@angular/common";
 import {SharedModule} from "./shared/shared.module";
+import {HeaderComponent} from "./layout/header.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, RouterLink, RouterLinkActive, CommonModule, NgOptimizedImage, SharedModule],
+  imports: [RouterOutlet, CommonModule, SharedModule, HeaderComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -14,14 +15,9 @@ export class AppComponent implements OnInit {
   constructor() {
   }
 
-  // TODO: define a User type
-  currentUser: any;
+  title = 'ranque';
 
   ngOnInit(): void {
-    // TODO: load currentUser from userService
-    this.currentUser = {
-      image: "placeholder"
-    }
+
   }
-  title = 'ranque';
 }
