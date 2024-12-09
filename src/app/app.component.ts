@@ -8,7 +8,7 @@ import {SharedModule} from "./shared/shared.module";
   standalone: true,
   imports: [RouterOutlet, CommonModule, SharedModule],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.css',
 })
 export class AppComponent implements OnInit {
   constructor() {
