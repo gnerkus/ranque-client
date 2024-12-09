@@ -2,11 +2,14 @@ import { Component } from '@angular/core';
 import {Observable} from "rxjs";
 import {AuthUser} from "../shared/models/user";
 import {StateService} from "../shared/state/state.service";
+import {HeaderComponent} from "../layout/header.component";
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [],
+  imports: [
+    HeaderComponent
+  ],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css'
 })
