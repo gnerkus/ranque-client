@@ -3,7 +3,6 @@ import { Observable } from 'rxjs';
 import { State, initialState } from '../models/state';
 import { Store } from './store';
 import {deepFreeze, select$} from "../utils";
-import {JwtStorageService} from "../jwtStorage.service";
 import {Injectable} from "@angular/core";
 
 @Injectable({ providedIn: 'root' })
@@ -20,7 +19,6 @@ export class StateService {
    * Creates a new instance
    */
   constructor(
-    private readonly jwtStorageService: JwtStorageService,
   ) {
     this.state$ = new Store(initialState);
     this.lastState = initialState;
@@ -47,7 +45,6 @@ export class StateService {
    */
   async setUser(user: AuthUser): Promise<State> {
     const newState = { ...this.lastState, user };
-    this.jwtStorageService.setItem(user?.token || '');
     this.setState(newState);
     return newState;
   }

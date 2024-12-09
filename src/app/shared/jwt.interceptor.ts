@@ -1,7 +1,7 @@
 ﻿import {inject} from "@angular/core";
-import {StateService} from "./state/state.service";
 import {HttpEvent, HttpHandlerFn, HttpRequest} from "@angular/common/http";
 import {Observable} from "rxjs";
+import {CookieService} from "ngx-cookie-service";
 
 
 /**
@@ -11,10 +11,10 @@ import {Observable} from "rxjs";
  * @returns Next result
  */
 export const jwtInterceptor = (request: HttpRequest<unknown>, next: HttpHandlerFn): Observable<HttpEvent<unknown>> => {
-  const user = inject(StateService).getLastUser();
-  if (user) {
+  const token = inject(CookieService).get("RANQUE_AUTH_accessToken")
+  if (token) {
     request = request.clone({
-      setHeaders: {Authorization: `Token ${user.token}`},
+      setHeaders: {Authorization: `Token ${token}`},
     });
   }
   return next(request);

@@ -1,9 +1,9 @@
-﻿import {AuthUser} from "./user";
+﻿import {AuthResponse} from "./user";
 
 /**
  * User response from service
  */
-export type UserResponse = AuthUser;
+export type UserResponse = AuthResponse;
 
 export type LoginUserRequest = {
   username: string;
