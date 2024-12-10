@@ -14,7 +14,10 @@ export const jwtInterceptor = (request: HttpRequest<unknown>, next: HttpHandlerF
   const token = inject(CookieService).get("RANQUE_AUTH_accessToken")
   if (token) {
     request = request.clone({
-      setHeaders: {Authorization: `Token ${token}`},
+      setHeaders: {
+        Authorization: `Bearer ${token}`,
+        Accept: "application/json"
+      },
     });
   }
   return next(request);
