@@ -1,9 +1,10 @@
-﻿import {AuthUser} from "./user";
+﻿import {AuthResponse} from "./user";
+import {Leaderboard} from "./leaderboard";
 
 /**
  * User response from service
  */
-export type UserResponse = AuthUser;
+export type UserResponse = AuthResponse;
 
 export type LoginUserRequest = {
   username: string;
@@ -14,3 +15,9 @@ export type RegisterUserRequest = {
   username: string;
   password: string;
 }
+
+/**
+ * Leaderboard response
+ */
+
+export type LeaderboardResponse = Leaderboard;

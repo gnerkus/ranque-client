@@ -1,19 +1,41 @@
-﻿import { inject } from '@angular/core';
-import { map, Observable, take } from 'rxjs';
-import { Router, UrlTree } from '@angular/router';
-import {JwtStorageService} from "../shared/jwtStorage.service";
+﻿import {Injectable} from '@angular/core';
+import {
+  ActivatedRouteSnapshot,
+  CanActivate, GuardResult, MaybeAsync,
+  Router,
+  RouterStateSnapshot,
+} from '@angular/router';
+import {CookieService} from "ngx-cookie-service";
 
-export const authGuard = (): Observable<boolean | UrlTree> => {
-  const storage = inject(JwtStorageService);
-  const router = inject(Router);
+@Injectable()
+export class CanActivateDashboard implements CanActivate {
+  constructor(private readonly cookieService: CookieService, private readonly router: Router) {
+  }
 
-  return storage.getItem().pipe(
-    map((token) => {
-      if (!token) {
-        return router.parseUrl('/login');
-      }
-      return true;
-    }),
-    take(1),
-  );
-};
+  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): MaybeAsync<GuardResult> {
+    const token = this.cookieService.get("RANQUE_AUTH_accessToken");
+
+    if (!token) {
+      return this.router.parseUrl('/login');
+    }
+
+    return true;
+  }
+}
+
+@Injectable()
+export class CanAuth implements CanActivate {
+  constructor(private readonly cookieService: CookieService, private readonly router: Router) {
+  }
+
+  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): MaybeAsync<GuardResult> {
+    const token = this.cookieService.get("RANQUE_AUTH_accessToken");
+
+    if (token) {
+      return this.router.parseUrl('/dashboard');
+    }
+
+    return true;
+  }
+}
+

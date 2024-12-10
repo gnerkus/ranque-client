@@ -19,7 +19,7 @@ type FromPage = {
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [FormsModule, RouterLink, ReactiveFormsModule, AsyncPipe],
+  imports: [FormsModule, ReactiveFormsModule],
   templateUrl: './login.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
@@ -65,10 +65,10 @@ export class LoginComponent implements OnInit {
                     { queryParams },
                   );
                 } else {
-                  this.router.navigate(['/']);
+                  this.router.navigate(['/dashboard']);
                 }
               } else {
-                this.router.navigate(['/']);
+                this.router.navigate(['/dashboard']);
               }
             }
           }),

@@ -2,9 +2,12 @@
  * User
  */
 export type AuthUser = {
-  email: string;
-  token: string;
-  refreshToken: string;
   username: string;
   image?: string;
 };
+
+export type AuthResponse = {
+  username: string;
+  accessToken: string;
+  refreshToken: string;
+}

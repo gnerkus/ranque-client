@@ -1,5 +1,5 @@
 ﻿import {BehaviorSubject} from "rxjs";
-import {deepFreeze, naiveObjectComparison} from "../utils";
+import {deepFreeze, naiveObjectComparison} from "../../utils";
 
 /**
  * State store
