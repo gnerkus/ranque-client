@@ -1,6 +1,6 @@
 ﻿import {Injectable} from "@angular/core";
 import {HttpClient} from "@angular/common/http";
-import {StateService} from "../shared/state/state.service";
+import {StateService} from "../shared/services/state/state.service";
 import {Observable, map, tap} from "rxjs";
 import {AuthResponse} from "../shared/models/user";
 import {environment} from "../../environments/environment";

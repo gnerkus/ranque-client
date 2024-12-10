@@ -1,8 +1,8 @@
-﻿import { AuthUser } from '../models/user';
+﻿import { AuthUser } from '../../models/user';
 import { Observable } from 'rxjs';
-import { State, initialState } from '../models/state';
+import { State, initialState } from '../../models/state';
 import { Store } from './store';
-import {deepFreeze, select$} from "../utils";
+import {deepFreeze, select$} from "../../utils";
 import {Injectable} from "@angular/core";
 
 @Injectable({ providedIn: 'root' })

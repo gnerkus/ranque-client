@@ -5,7 +5,7 @@
   TemplateRef,
   ViewContainerRef
 } from '@angular/core';
-import {StateService} from "./state/state.service";
+import {StateService} from "./services/state/state.service";
 
 @Directive({ selector: '[appShowAuthed]' })
 export class ShowAuthedDirective implements OnInit {
