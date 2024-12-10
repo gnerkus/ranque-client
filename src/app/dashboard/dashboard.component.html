@@ -1,9 +1,13 @@
 <app-header></app-header>
 
-@if (user$) {
-  <p>Logged in user</p>
-}
+<section class="h-[calc(100vh-64px) p-8">
+  <div class="mx-auto max-w-7xl xl:max-w-[1600px] lg:max-w-7xl md:max-w-2xl sm:max-w-xl">
+    <section class="flex gap-8 max-h-96 justify-center flex-wrap">
+      @for (leaderboard of leaderboards$ | async; track leaderboard.Id) {
+        <dashboard-leaderboard [leaderboard]="leaderboard"></dashboard-leaderboard>
+      }
+    </section>
+  </div>
+</section>
 
-@for (leaderboard of leaderboards$ | async; track leaderboard.id) {
 
-}

@@ -1,5 +1,5 @@
 ﻿export type Leaderboard = {
-  id: string;
-  name: string;
-  luaScript: string;
+  Id: string;
+  Name: string;
+  LuaScript: string;
 }

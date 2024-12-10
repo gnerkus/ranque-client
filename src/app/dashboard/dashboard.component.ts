@@ -6,6 +6,7 @@ import {HeaderComponent} from "../layout/header.component";
 import {LeaderboardService} from "../shared/services/leaderboard.service";
 import {LeaderboardResponse} from "../shared/models/api";
 import {AsyncPipe} from "@angular/common";
+import {DashboardLeaderboardComponent} from "./components/dashboard.leaderboard.component";
 
 @Component({
   selector: 'app-dashboard',
@@ -13,6 +14,7 @@ import {AsyncPipe} from "@angular/common";
   imports: [
     HeaderComponent,
     AsyncPipe,
+    DashboardLeaderboardComponent,
   ],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css'
