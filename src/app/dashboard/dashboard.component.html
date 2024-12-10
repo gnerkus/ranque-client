@@ -3,3 +3,7 @@
 @if (user$) {
   <p>Logged in user</p>
 }
+
+@for (leaderboard of leaderboards$ | async; track leaderboard.id) {
+
+}
